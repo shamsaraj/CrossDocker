@@ -1,0 +1,23 @@
+########################################################
+#Instructions:
+#Please don't change the tags: [paths] or [values].
+#Use "/" instead of "\".
+#Paths should not end with "/".
+#All of the paths should not contain any spaces.
+#openbabel installation is needed. babel.exe should be in the PATH environment variable.
+########################################################
+#Descriptions for the parameters:
+#project_path --> Output path 
+#user_receptors_path --> path for the receptor files (.mol2, .pdb or .pdbqt), and should end with -p suffix.
+#user_ligands_path --> path for the ligands  (.mol2, .pdb or .pdbqt). The root-name for the ligands should be same as the one of corresponding native receptor and should end with -l suffix. 
+#########################################################
+[paths]
+project_path = D:/small_dataset/inputs
+user_receptors_path = D:/small_dataset/inputs/receptors
+user_ligands_path = D:/small_dataset/inputs/ligands
+[values]
+size_x = 23
+size_y = 23
+size_z = 23
+exhaustiveness = 8
+num_modes = 10

@@ -28,6 +28,11 @@ Set the parameters defined in the config.txt file.
 Run the CrossDocker.exe file from command line.
 To test the CrossDocker the small_dataset can be used.
 
+Tip: `set_vina_priority_high.bat` / `set_vina_priority_low.bat` set the
+running vina.exe process to high or idle CPU priority (via `wmic ...
+setpriority`), if you want docking to run faster or stay in the background
+without slowing down other programs.
+
 License:
 
 CrossDocker's own code is MIT licensed (see LICENSE). It bundles a compiled

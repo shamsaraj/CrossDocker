@@ -6,6 +6,18 @@ https://springerplus.springeropen.com/articles/10.1186/s40064-016-1972-4
 
 Shamsara, J. (2016). "CrossDocker: a tool for performing cross-docking using Autodock Vina." SpringerPlus 5(1): 1.
 
+```bibtex
+@article{shamsara2016crossdocker,
+  author  = {Shamsara, Jamal},
+  title   = {{CrossDocker}: a tool for performing cross-docking using {Autodock Vina}},
+  journal = {SpringerPlus},
+  year    = {2016},
+  volume  = {5},
+  pages   = {1},
+  doi     = {10.1186/s40064-016-1972-4}
+}
+```
+
 Download:
 
 The executable, bundled Vina binary, sample datasets, and standalone source

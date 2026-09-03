@@ -18,7 +18,7 @@ import shutil
 import errno
 import csv
 from rmsd import rmsd2
-from center import center_of_mass as center
+from center_of_mass import center_of_mass as center
 from openpyxl import Workbook
 import numpy
 from openpyxl.styles import Color, PatternFill, Font, Border, Style

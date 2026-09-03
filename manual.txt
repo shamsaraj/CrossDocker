@@ -3,6 +3,7 @@ The executable was built for windows. There is no need to installation; just ext
 
 Prerequisites:
 Openbabel 2.3 or higher is needed for successful execution of the CrossDocker. By default the babel.exe is in the PATH environment variable. If it is not in the PATH it should be added to it before running Cross-Docker.
+MGLTools/AutoDockTools must also be installed; CrossDocker does not bundle it. See README.md.
 
 Usage:
 Set the parameters defined in the config.txt file.

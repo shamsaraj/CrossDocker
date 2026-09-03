@@ -9,7 +9,7 @@ print "Usage of CrossDocker is free without any limitations."
 print "  There is NO warranty"
 print "################################################################################"
 print "Please see the manual and config files for more information"
-print "http://www.pharm-sbg.com"
+print "http://www.pharm-sbg.com (no longer online)"
 print"#################################################################################"
 print "..."
 import os

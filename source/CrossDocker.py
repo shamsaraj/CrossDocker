@@ -18,15 +18,15 @@ import shutil
 import errno
 import csv
 from rmsd import rmsd2
-from center import center_of_mass as center
+from center_of_mass import center_of_mass as center
 from openpyxl import Workbook
 import numpy
 from openpyxl.styles import Color, PatternFill, Font, Border, Style
 from openpyxl.formatting import ColorScaleRule, CellIsRule, FormulaRule
 from ConfigParser import SafeConfigParser
 import sys
-from prepare_ligand4_m2 import PL
-from prepare_receptor4_m2 import PR
+from adt_ligand_prep import PL
+from adt_receptor_prep import PR
 from time import sleep
 sleep (5)
 ##########################################################Functions########################################################

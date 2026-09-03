@@ -32,7 +32,15 @@ The executable was built for windows. There is no need to installation; just ext
 
 Prerequisites:
 
-Openbabel 2.3 or higher is needed for successful execution of the CrossDocker. By default the babel.exe is in the PATH environment variable. If it is not in the PATH it should be added to it before running Cross-Docker.
+**Open Babel** 2.3 or higher is needed for successful execution of CrossDocker.
+By default `babel.exe` is expected on the `PATH` environment variable; if it is
+not, add it before running CrossDocker.
+
+**MGLTools / AutoDockTools** must also be installed. CrossDocker does not bundle
+it: `source/adt_ligand_prep.py` and `source/adt_receptor_prep.py` are thin
+adapters that import `MolKit` and `AutoDockTools` from your own MGLTools
+installation. Download it from <http://mgltools.scripps.edu> and make sure its
+Python packages are importable by the interpreter running CrossDocker.
 
 Usage:
 
@@ -47,7 +55,14 @@ without slowing down other programs.
 
 License:
 
-CrossDocker's own code is MIT licensed (see LICENSE). It bundles a compiled
-copy of AutoDock Vina (`vina.exe`, in the release), which is distributed
-under its own separate license — see `vina_license.rtf`.
+CrossDocker's own code is MIT licensed (see LICENSE).
+
+It also uses third-party work: an RMSD routine reduced from the BSD-2-Clause
+[rmsd](https://github.com/charnley/rmsd) project, adapters derived from
+AutoDockTools (Copyright Michel F. Sanner / TSRI, MGLTools Software License
+Agreement), and a bundled copy of AutoDock Vina in the release archive under
+its own separate licence (`vina_license.rtf`).
+
+Each component, its licence and the modifications made are listed in
+[NOTICE.md](NOTICE.md).
 

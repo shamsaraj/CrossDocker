@@ -1,60 +1,25 @@
 #!/usr/bin/env python
 #
-# 
+# Adapter around AutoDockTools' ligand preparation, for CrossDocker.
 #
+# Derived from AutoDockTools Utilities24/prepare_ligand4.py:
 # $Header: /opt/cvs/python/packages/share1.5/AutoDockTools/Utilities24/prepare_ligand4.py,v 1.5.4.1 2009/04/15 17:41:57 rhuey Exp $
+# Copyright (c) Michel F. Sanner and TSRI. AutoDockTools is distributed under
+# the MGLTools Software License Agreement -- see http://mgltools.scripps.edu
 #
-import os 
+# Modifications by Jamal Shamsara: the command-line front end (option parsing
+# and the usage text) has been removed, and the remaining call exposed as
+# PL() with the options CrossDocker uses fixed as defaults.
+#
+# AutoDockTools is NOT bundled with CrossDocker. The MolKit and AutoDockTools
+# imports below resolve against an MGLTools installation that you provide --
+# see README.md.
 
 from MolKit import Read
 
 from AutoDockTools.MoleculePreparation import AD4LigandPreparation
 
 
-
-
-import sys
-
-
-def usage():
-    "Print helpful, accurate usage statement to stdout."
-    print "Usage: prepare_ligand4.py -l filename"
-    print
-    print "    Description of command..."
-    print "         -l     ligand_filename (.pdb or .mol2 or .pdbq format)"
-    print "    Optional parameters:"
-    print "        [-v]    verbose output"
-    print "        [-o pdbqt_filename] (default output filename is ligand_filename_stem + .pdbqt)"
-    print "        [-d]    dictionary to write types list and number of active torsions "
-
-    print "        [-A]    type(s) of repairs to make:\n\t\t bonds_hydrogens, bonds, hydrogens (default is to do no repairs)"
-    print "        [-C]    do not add charges (default is to add gasteiger charges)"
-    print "        [-p]    preserve input charges on atom type, eg -p Zn"
-    print "               (default is not to preserve charges on any specific atom type)"
-    print "        [-U]    cleanup type:\n\t\t nphs_lps, nphs, lps, '' (default is 'nphs_lps') "
-    print "        [-B]    type(s) of bonds to allow to rotate "
-    print "               (default sets 'backbone' rotatable and 'amide' + 'guanidinium' non-rotatable)"
-    print "        [-R]    index for root"
-    print "        [-F]    check for and use largest non-bonded fragment (default is not to do this)"
-    print "        [-M]    interactive (default is automatic output)"
-    print "        [-I]    string of bonds to inactivate composed of "
-    print "                   of zero-based atom indices eg 5_13_2_10  "
-    print "                   will inactivate atoms[5]-atoms[13] bond "
-    print "                               and atoms[2]-atoms[10] bond "
-    print "                      (default is not to inactivate any specific bonds)"
-    print "        [-Z]    inactivate all active torsions     "
-    print "                      (default is leave all rotatable active except amide and guanidinium)"
-    print "        [-g]    attach all nonbonded fragments "
-    print "                      (default is not to do this)"
-
-
-# process command arguments
-#try:
-    #opt_list, args = getopt.getopt(sys.argv[1:], 'l:vo:d:A:Cp:U:B:R:MFI:Zgh')
-#except getopt.GetoptError, msg:
-    #print 'prepare_ligand4.py: %s' %msg
-    #usage()
-    #sys.exit(2)
 def PL (LF):
     # initialize required parameters
     #-l: ligand
@@ -91,10 +56,8 @@ def PL (LF):
     dict = None
 
 
-    if not  ligand_filename:
-        print 'prepare_ligand4: ligand filename must be specified.'
-        usage()
-        sys.exit()
+    if not ligand_filename:
+        raise ValueError('ligand filename must be specified')
 
     mols = Read(ligand_filename)
     if verbose: print 'read ', ligand_filename
